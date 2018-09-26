@@ -1,0 +1,220 @@
+<!-- <app-menu></app-menu> -->
+<!-- <div class="page-wrapper chiller-theme toggled">
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div id="toggle-sidebar">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="sidebar-brand">
+        <a>Vista y Paladar</a>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-fluid img-rounded" src="../../../assets/img/perfil.jpg" alt="">
+        </div>
+        <div class="user-info">
+          <span *ngIf="this._userService.usuario.name" class="name_user nombreu">{{this._userService.usuario.name}}</span>
+          <span *ngIf="!this._userService.usuario.name" class="name_user nombreu">{{nameUser}}</span>
+          <span *ngIf="identity.role=='ROLE_ADMIN'" class="user-role">Dueño Restaurante</span>
+          <span *ngIf="identity.role=='ROLE_USER'" class="user-role">Usuario</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <div class="sidebar-search">
+        <div>
+          <div class="input-group">
+            <input type="text" class="form-control search-menu" placeholder="Buscar...">
+            <span class="input-group-addon">
+              <i class="fa fa-search"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>Restaurante</span>
+          </li>
+          <li class="">
+            <a class="res_add" [routerLink]="['/principal']">
+              <i class="fa fa-dashboard"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li class="">
+            <a class="res_add" [routerLink]="['/listrestaurant']">
+              <i class="fa fa-list" aria-hidden="true"></i>
+              <span>restaurantes</span>
+            </a>
+          </li>
+          <li class="" *ngIf="identity.role=='ROLE_ADMIN'">
+            <a class="res_add" [routerLink]="['/mrestaurant']">
+              <i class="fa fa-plus"></i>
+              <span>Registar</span>
+            </a>
+          </li>
+          <li class="res_add" *ngIf="identity.role=='ROLE_ADMIN'">
+            <a [routerLink]="['/restaurantedit']">
+              <i class="fa fa-cutlery"></i>
+              <span>Mantenimiento</span>
+            </a>
+          </li> 
+          <li class="header-menu">
+            <span>Cuenta</span>
+          </li>
+          <li>
+            <a class="res_add">
+              <i class="fa fa-calendar"></i>
+              <span>Calendario</span>
+            </a>
+          </li>
+          <li>
+              <li>
+                  <a class="res_add" [routerLink]="['/perfil']">
+                    <i class="fa fa-user"></i>
+                    <span class="verperfil" >Ver perfil</span>
+                  </a>
+                </li>
+                <li>
+              <a [routerLink]="['/inicio']" (click)="logout()" class="submenu-link">
+                <i class="fa fa-external-link-square" aria-hidden="true"></i>
+                <span>Cerrar sesión</span>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <header id="header-container">
+    <div class="container">
+      <div class="row flex-items-xs-middle flex-items-xs-between">
+        <div class="col-xs-3">
+          <button class="navbar-toggler pull-xs-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#navMenu" aria-controls="navMenu"
+            aria-expanded="false" aria-label="Toggle navigation">
+            &#9776;
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="menu-container menu2">
+    <nav id="navMenu" class="navbar-toggleable-xs menu2 navbar collapse  menu">
+      <div class="container-fluid">
+        <div class="row">
+          <div class=" col-md-6 col-xl-9 col-sm-6">
+            <ul class="nav navbar-nav">
+              <li class="nav-item text-xs-center vtext">
+                <a [routerLink]="['/principal']">
+                  <img class="icono" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGNpcmNsZSBzdHlsZT0iZmlsbDojRjEzMzNGOyIgY3g9IjI1NiIgY3k9IjI1NiIgcj0iMjU2Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNBRTI4M0Y7IiBkPSJNMTc2LjIyLDQ5OS4zMDVDMjAxLjMyOSw1MDcuNTMzLDIyOC4xNDEsNTEyLDI1Niw1MTJjMTQxLjM4NSwwLDI1Ni0xMTQuNjE1LDI1Ni0yNTYgIGMwLTMxLjMwMS01LjYyNy02MS4yODQtMTUuOTA5LTg5LjAwOGwtMzIuODI1LTMyLjgyNWwtMTQuOTE0LDkzLjc0NWwtODUuNzE4LTg1LjcxOGwtMTg1LjgxLDcxLjUzNWwtODMuMTQxLTgzLjE0MWwtMC45MTEsMjAuOTM4ICBsLTIwLjkzOC0yMC45MzhsLTEuNDk3LDIxLjQzOEw0OC45LDEzMC41ODlsLTMuODQ3LDg4LjM5M0w3MSwyNDQuOTI5TDUzLjkyOCwzODIuNjY3TDE3Ni4yMiw0OTkuMzA1eiIvPgo8Y2lyY2xlIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBjeD0iMjU2LjAxIiBjeT0iMjU2IiByPSIxNTUuOTUiLz4KPGc+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRTBFMEUwOyIgZD0iTTI1Ni4wMDksMTAwLjA0OWMtMC4xMTQsMC0wLjIyOCwwLjAwNC0wLjM0MiwwLjAwNHYzMTEuODkzYzAuMTE0LDAsMC4yMjgsMC4wMDQsMC4zNDIsMC4wMDQgICBjODYuMTI5LDAsMTU1Ljk1MS02OS44MjIsMTU1Ljk1MS0xNTUuOTUxUzM0Mi4xMzgsMTAwLjA0OSwyNTYuMDA5LDEwMC4wNDl6Ii8+Cgk8Y2lyY2xlIHN0eWxlPSJmaWxsOiNFMEUwRTA7IiBjeD0iMjU2LjAxIiBjeT0iMjU2IiByPSI5MC43MiIvPgo8L2c+CjxwYXRoIHN0eWxlPSJmaWxsOiNDMEMwQzA7IiBkPSJNMjU2LjAwOSwxNjUuMjg0Yy0wLjExNCwwLTAuMjI4LDAuMDA0LTAuMzQyLDAuMDA0djE4MS40MjRjMC4xMTQsMCwwLjIyOCwwLjAwNCwwLjM0MiwwLjAwNCAgYzUwLjEwMSwwLDkwLjcxNi00MC42MTUsOTAuNzE2LTkwLjcxNlMzMDYuMTEsMTY1LjI4NCwyNTYuMDA5LDE2NS4yODR6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiNGRkQ4NjM7IiBkPSJNNDQ1LjM1MSwxMjYuNTAyYy0xMi4zODUsMC40NC0yMi4wMjIsMTAuOTk1LTIyLjAyMiwyMy4zODh2MjM1LjYyM2gyNy44NjdWMjc5LjI1NiAgYzkuODU0LDAsMTcuODQzLTcuOTg5LDE3Ljg0My0xNy44NDNWMTQ5LjM0MkM0NjkuMDM5LDEzNi40NDMsNDU4LjM1MywxMjYuMDQsNDQ1LjM1MSwxMjYuNTAyeiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRkZFQ0IzOyIgZD0iTTgxLjc5NSwzODIuNjY3VjIyMy42NTFjNi42NjEtMC41ODQsMTEuODg4LTYuMTY5LDExLjg4OC0xMi45ODJ2LTgwLjA4aC02Ljg2djU4LjM5NCAgYzAsMy42MTctMi45MzIsNi41NDktNi41NDksNi41NDloLTEuODkxYy0zLjYxNywwLTYuNTQ5LTIuOTMyLTYuNTQ5LTYuNTQ5di01OC4zOTRoLTcuOTQ1djU4LjM5NGMwLDMuNjE3LTIuOTMyLDYuNTQ5LTYuNTQ5LDYuNTQ5ICBoLTEuODkxYy0zLjYxNywwLTYuNTQ5LTIuOTMyLTYuNTQ5LTYuNTQ5di01OC4zOTRoLTYuODZ2ODAuMDhjMCw2LjgxMyw1LjIyNywxMi4zOTgsMTEuODg4LDEyLjk4MnYxNTkuMDE1TDgxLjc5NSwzODIuNjY3ICBMODEuNzk1LDM4Mi42Njd6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="
+                  />
+                </a>
+                <a [routerLink]="['/principal']" class=" vista">
+                  <span class="name"> VISTA Y PALADAR</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class=" col-md-6 col-xl-3 col-sm-6 menu_dos">
+            <ul class="nav navbar-nav">
+              <li class="nav-item dropdown campanita text-xs-center">
+                <a class="nav-link">
+                  <strong>
+                    <i class="fa i_campana campana fa-bell" aria-hidden="true"></i>
+                  </strong>
+                </a>
+
+                <nav class="submenu">
+                    <ul class="submenu-items">
+                      <li class="submenu-item">
+                        <a [routerLink]="['/perfil']" class="submenu-link">
+                          <i class="fa fa-user" aria-hidden="true"></i>
+                         Notificacion 1</a>
+                      </li>
+
+                      <li class="submenu-item">
+                          <a [routerLink]="['/perfil']" class="submenu-link">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                           Notificacion 2</a>
+                        </li>
+
+                        <li class="submenu-item">
+                            <a [routerLink]="['/perfil']" class="submenu-link">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                             Notificacion 3</a>
+                          </li>
+
+                          <li class="submenu-item">
+                              <a [routerLink]="['/perfil']" class="submenu-link">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                               Notificacion 4</a>
+                            </li>
+
+
+                    </ul>
+                  </nav>
+
+              </li>
+              <li class="nav-item dropdown text-xs-center usuario">
+                <a class="nav-link flecha">
+                  <img src="assets/img/perfil.jpg" class="img_perfil">
+                  <span *ngIf="this._userService.usuario.name" class="name_user">{{this._userService.usuario.name}}</span>
+                  <span *ngIf="!this._userService.usuario.name" class="name_user">{{nameUser}}</span>
+
+                </a>
+
+                <nav class="submenu">
+                  <ul class="submenu-items">
+                    <li class="submenu-item">
+                      <a [routerLink]="['/perfil']" class="submenu-link">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        Ver Perfil</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#" class="submenu-link">
+                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                        Mis mensajes</a>
+                      </li>
+                          <li class="submenu-item">
+                            <a href="#" class="submenu-link">
+                              <i class="fa fa-key" aria-hidden="true"></i>
+                              Cambiar contraseña</a>
+                          </li>
+                    <li class="submenu-item">
+                      <hr class="submenu-seperator" />
+                    </li>
+                    <li class="submenu-item">
+                      <a href="#" class="submenu-link">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        Preguntas frecuentes</a>
+                    </li>
+                    <li class="submenu-item">
+                      <a [routerLink]="['/inicio']" (click)="logout()" class="submenu-link">
+                        <i class="fa fa-external-link-square" aria-hidden="true"></i>
+                        Cerrar sesión</a>
+                    </li>
+                  </ul>
+                </nav>
+
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div> -->
+
+  <main class="page-content">
+    <router-outlet></router-outlet>
+    <!-- <app-footer></app-footer> -->
+
+  </main>
+<!-- </div> -->

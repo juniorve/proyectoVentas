@@ -1,0 +1,107 @@
+.volver{
+  color: white;
+  background: rgb(160,82,45,0.9)
+}
+
+.volver:hover{
+  background: rgb(160,82,45,1)
+}
+
+.guardar{
+  color: white;
+  background: rgb(46,139,87,0.9)
+}
+
+.guardar:hover{
+  background: rgb(46,139,87,1)
+}
+
+
+.btnsave{
+  margin-left: 5px;
+}
+textarea{
+  overflow-x:hidden;
+}
+
+.contenedor{
+background-color: #eee;
+}
+.container{
+background-color: white;
+}
+
+.tip_ev{
+margin-top: 10px;
+}
+
+.fech_ev{
+margin-top: 5px;
+}
+
+.div-imagen{
+    border-radius: 3px;
+  border: 1px dashed #c1c1c1;
+  min-height: 150px;
+}
+
+.c-dropzone .dropzone {
+  background: transparent;
+}
+
+.dropzone.dz-clickable {
+  cursor: pointer;
+}
+.dropzone {
+  border: 0;
+  min-height: 0;
+  padding: 0;
+}
+
+.imagen{
+margin-top: 40px;
+}
+
+.imgTemporal{
+  height: 400px;
+}
+
+.title{
+  color:white;
+  width: 102.8%;
+  margin-left: -15px;
+  padding-top: 25px;
+	padding-bottom: 20px;
+	 background: linear-gradient(to right,#21618C,#5499C7, #3498DB );
+  }
+
+  .title h4{
+	  margin-left: 10px;
+  }
+
+
+.imageD{
+padding-bottom: 40px;
+}
+/*material styles*/
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+
+.texto{
+    width: 100%;
+}
+
+.boton{
+  text-align: center;
+  padding: 20px 0px;
+}

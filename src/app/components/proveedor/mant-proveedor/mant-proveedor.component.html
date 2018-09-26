@@ -1,54 +1,50 @@
+<div class="contenedor">
 
+  <header class="titulo">
+    <h3>Administración de Proveedores</h3>
+  </header>
+  <br>
 
-   <div class="contenedor" >
-
-    <header class= "titulo">
-        <h3>Administración de Proveedores</h3>
-    </header>
-    <br>
-
-    <div class="container">
-        <div class="row">
-          <span class="text-adm col-xs-12">Use la tabla a continuación para administrar sus proveedores.</span>
-          <br><br>
-          <!--   <div class="table-responsive"> -->
-            <div class="col-xs-12 ">
-                <table class="table tabla" >
-                  <thead>
-                    <tr>
-                      <th>N°</th>
-                      <th>Nombre</th>
-                      <th>Descripción</th>
-                      <th>Capacidad</th>
-                      <th>Horario</th>
-                      <th>editar/eliminar</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let restaurant of restaurants; let i=index">
-                      <td scope="row">{{i+1}}</td>
-                      <td>{{restaurant.nombre}}</td>
-                      <td>{{restaurant.tipo_cocina}}</td>
-                      <td>{{restaurant.capacidad}}</td>
-                      <td>{{restaurant.horario}}</td>
-                      <td>
-                      <div class="btn-group">
-                        <button class="btn btn-default" (click)="editRestaurant(restaurant._id)"><span class="fa fa-pencil"></span></button>
-                        <button class="btn btn-danger" (click)="deleteRestaurant(restaurant._id)"><span class="fa fa-trash"></span></button>
-                      </div>
-                      </td>
-                    </tr>
-                    </table>
-            </div>
-
-            <button class="offset-lg-5 offset-xs-2 offset-sm-3 offset-md-4 btn btn-nuevo"
-            [routerLink]="['/mrestaurant']"><i class="fa fa-plus mas" aria-hidden="true"></i>
-              <strong>NUEVO RESTAURANTE</strong></button>
-
-        </div>
-
-    <section *ngIf="restaurants.length<3"></section>
+  <div class="container">
+    <div class="row">
+      <span class="text-adm col-xs-12">Use la tabla a continuación para administrar sus proveedores.</span>
+      <br><br>
+      <!--   <div class="table-responsive"> -->
+      <div class="col-xs-12 ">
+        <table class="table tabla">
+          <thead>
+            <tr>
+              <th>N°</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Capacidad</th>
+              <th>Horario</th>
+              <th>editar/eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let restaurant of restaurants; let i=index">
+              <td scope="row">{{i+1}}</td>
+              <td>{{restaurant.nombre}}</td>
+              <td>{{restaurant.tipo_cocina}}</td>
+              <td>{{restaurant.capacidad}}</td>
+              <td>{{restaurant.horario}}</td>
+              <td>
+                <div class="btn-group">
+                  <button class="btn btn-default" (click)="editRestaurant(restaurant._id)"><span class="fa fa-pencil"></span></button>
+                  <button class="btn btn-danger" (click)="deleteRestaurant(restaurant._id)"><span class="fa fa-trash"></span></button>
+                </div>
+              </td>
+            </tr>
+        </table>
       </div>
+
+      <button class="offset-lg-5 offset-xs-2 offset-sm-3 offset-md-4 btn btn-nuevo" [routerLink]="['/mrestaurant']"><i
+          class="fa fa-plus mas" aria-hidden="true"></i>
+        <strong>NUEVO PROVEEDOR</strong></button>
+
     </div>
 
-
+    <section *ngIf="restaurants.length<3"></section>
+  </div>
+</div>

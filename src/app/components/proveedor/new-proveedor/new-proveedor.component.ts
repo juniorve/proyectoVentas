@@ -35,7 +35,7 @@ export class NewProveedorComponent implements OnInit {
   serializedDate = new FormControl((new Date()).toISOString());
 
   public identity;
-  public title: String = 'REGISTRO DE NUEVO RESTAURANTE';
+  public title: String = 'Registro de nuevo proveedor';
   public token;
   public url;
   public restaurant: Restaurant;

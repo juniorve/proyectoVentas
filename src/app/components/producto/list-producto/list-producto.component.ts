@@ -13,7 +13,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   providers: [RestaurantService, UserService]
 
 })
-export class ListrestaurantComponent implements OnInit {
+export class ListProductoComponent implements OnInit {
   public identity;
   public token;
   public url;

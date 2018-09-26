@@ -14,6 +14,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 
+import { ProveedorModule } from './components/proveedor/proveedor.module';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,15 @@ import { PrincipalComponent } from './components/principal/principal.component';
     CategoriasComponent
   ],
   imports: [
-    MaterialModule, 
+     MaterialModule, 
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    BrowserModule,
+    // BrowserModule,
     routing,
-    OverlayModule, ReactiveFormsModule
+    OverlayModule, ReactiveFormsModule,
+
+    ProveedorModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]

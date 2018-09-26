@@ -10,12 +10,12 @@
 
     <form>
       <div class="row">
-        <div class="col-xl-10 offset-xl-1">
+        <div class="col-sm-10 offset-sm-1">
 
           <div class="col-xl-12">
             <mat-form-field appearance="outline" class="texto">
-              <mat-label>Nombre del restaurante</mat-label>
-              <input matInput #nombre="ngModel" name="nombre" [(ngModel)]="restaurant.nombre" class="form-control"
+              <mat-label>Nombre del proveedor</mat-label>
+              <input matInput  name="nombre" [(ngModel)]="restaurant.nombre" class="form-control"
                 #nombre maxlength="100" autocomplete="off" required>
               <mat-hint align="end">{{nombre.value.length}} /100</mat-hint>
             </mat-form-field>
@@ -25,7 +25,7 @@
 
               <div class="col-xs-12 col-md-6">
                 <mat-form-field class="texto" appearance="outline">
-                  <mat-label>Seleccione tipo de comida</mat-label>
+                  <mat-label>Seleccione tipo de producto</mat-label>
                   <mat-select name="tipo_cocina" [(ngModel)]="restaurant.tipo_cocina" [formControl]="tipoControl"
                     required>
                     <mat-option *ngFor="let tipo of tipos" [value]="tipo.name">
@@ -48,7 +48,7 @@
           </div>
           <div class="container">
             <div class="row">
-              <div class="col-xs-12 ">
+              <div class="col-xs-12 col-xs-12 col-md-6 ">
                 <mat-form-field appearance="outline" class="texto">
                   <mat-label>Horario</mat-label>
                   <input matInput #horario="ngModel" name="horario" [(ngModel)]="restaurant.horario" class="form-control"
@@ -57,7 +57,7 @@
                 </mat-form-field>
 
               </div>
-              <div class="col-xs-12">
+              <div class="col-xs-12 col-xs-12 col-md-6">
                 <mat-form-field appearance="outline" class="texto">
                   <mat-label>Dirección</mat-label>
                   <input matInput #direccion="ngModel" name="direccion" [(ngModel)]="restaurant.direccion" class="form-control"
@@ -65,10 +65,9 @@
                   <mat-hint align="end">{{direccion.value.length}} /100</mat-hint>
                 </mat-form-field>
               </div>
-              <div class="col-xs-12 tip_ev">
-                <!-- <textarea #descripcion="ngModel" name="descripcion" [(ngModel)]="restaurant.descripcion" rows="4" class="form-control" placeholder="descripción del restaurant"></textarea> -->
+              <div class="col-xs-12 col-xs-12 col-md-12 tip_ev">
                 <mat-form-field class="texto" appearance="outline">
-                  <mat-label>Descripción del restaurant</mat-label>
+                  <mat-label>Descripción del proveedor</mat-label>
                   <textarea matInput #descripcion="ngModel" name="descripcion" [(ngModel)]="restaurant.descripcion"
                     rows="4" #cantidad maxlength="400" autocomplete="off" required></textarea>
                   <mat-hint align="end">{{cantidad.value.length}} /400</mat-hint>
@@ -111,4 +110,5 @@
     </form>
   </div>
   <br>
-</div>
+</div> 
+ 

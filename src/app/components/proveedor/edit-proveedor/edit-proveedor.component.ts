@@ -15,25 +15,24 @@ declare var $: any;
 
 
 @Component({
-  selector: 'app-editrestaurant',
-  templateUrl: './editrestaurant.component.html',
-  styleUrls: ['./editrestaurant.component.css'],
+  selector: 'edit-proveedor',
+  templateUrl: './edit-proveedor.component.html',
+  styleUrls: ['./edit-proveedor.component.css'],
   providers: [RestaurantService, UserService]
 
 })
-export class EditrestaurantComponent implements OnInit {
+export class EditProveedorComponent implements OnInit {
   date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
   tipoControl = new FormControl([Validators.required]);
   tipos = [
-    { name: 'Comida china' },
-    { name: 'Comida japonesa' },
-    { name: 'Pescados y mariscos' },
-    { name: 'Hornos y parrillas' },
+    { name: 'ropa hombre' },
+    { name: 'ropa mujer' },
+    { name: 'accesorios' }
   ];
 
   public usuario;
-  public title: String = 'EDICION DE DATOS DEL RESTAURANTE';
+  public title: String = 'Edición de datos del proveedor';
   public token;
   public url;
   public restaurant: Restaurant;

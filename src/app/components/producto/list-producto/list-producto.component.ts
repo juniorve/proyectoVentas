@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/* import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../../../services/restaurant.service';
 import { Restaurant } from '../../../models/restaurant';
 import { GLOBAL } from '../../../services/global';
@@ -66,50 +66,5 @@ export class ListProductoComponent implements OnInit {
     );
   }
 
-  p/* ublic _idEvento:String;
-    updateEvento()
-  {
-      this._eventoService.updateEvento(this.token,this._idEvento, this.evento).subscribe(
-
-        response=>{
-           if(!response.evento){
-            alert("Error al editar evento");
-          }
-          else{
-            alert("evento modificado exitosamente");
-             // this.getEtapasxEvent();
-             // this.evento = new Etapa('','','','','');
-              }
-        },
-
-        error=>{
-          var errorMessage = <any>error;
-          if(errorMessage!=null){
-            console.log(error);
-          }
-        }
-
-      );
-  }
-
-  deleteEvento(){
-    this._eventoService.deleteEvento(this.token, this._idEvento).subscribe(
-      response =>{
-          if(!response.evento){
-            alert("Error en el servidor");
-          }else{
-           // this.getEtapasxEvento();
-            alert("Evento eliminado con exito");
-          }
-
-        },
-          error =>{
-          var errorMessage = <any>error;
-          if(errorMessage!=null){
-            console.log(error);
-           }
-        }
-      );
-  } */
-
 }
+ */

@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit{
                               // crear elemento en el localstorage para tener al token disponible
                               localStorage.setItem('token', token);
 
-                                       this._router.navigate(['/principal']);
+                                       this._router.navigate(['/mant-proveedor']);
                                        this.user = new User('','','','','','','','','','','','');
                                       }
                               },

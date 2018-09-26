@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   tipoControl = new FormControl([Validators.required]);
   tipos = [
     { name: 'Usuario', valor: 'ROLE_USER' },
-    { name: 'Dueño de restaurante', valor: 'ROLE_ADMIN' },
+    { name: 'Dueño de la empresa', valor: 'ROLE_ADMIN' },
     // { name: 'Buena', valor: 7.5 }
   ];
 

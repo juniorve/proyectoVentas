@@ -3,12 +3,12 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { GLOBAL } from './global';
-import { Restaurant } from '../models/restaurant';
+import { Proveedor } from './../models/proveedor';
 
 
 @Injectable()
 
-export class RestaurantService {
+export class ProveedorService {
 
   public url: String;
 
@@ -16,60 +16,54 @@ export class RestaurantService {
     this.url = GLOBAL.url;
   }
 
-  saveRestaurant(token, restaurant: Restaurant) {
+  saveProveedor(token, proveedor: Proveedor) {
 
-    let json = JSON.stringify(restaurant);
+    let json = JSON.stringify(proveedor);
     let params = json;
 
     let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
 
-    return this._http.post(this.url + 'restaurant', params, { headers: headers })
+    return this._http.post(this.url + 'proveedor', params, { headers: headers })
       .map(res => res.json());
   }
 
-  getRestaurant(token, restaurantId = null) {
+  getProveedor(token, proveedorId = null) {
 
     let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
     let options = new RequestOptions({ headers: headers });
 
-    return this._http.get(this.url + 'restaurant/' + restaurantId, options)
+    return this._http.get(this.url + 'proveedor/' + proveedorId, options)
+      .map(res => res.json());
+  }
+
+
+  getProveedores(token) {
+
+    let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
+    let options = new RequestOptions({ headers: headers });
+
+    return this._http.get(this.url + 'proveedores', options)
       .map(res => res.json());
   }
 
 
 
-  updateRestaurant(token, id: String, restaurant: Restaurant) {
+  updateProveedor(token, id: String, proveedor: Proveedor) {
 
-    let json = JSON.stringify(restaurant);
+    let json = JSON.stringify(proveedor);
     let params = json;
 
     let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
 
-    return this._http.put(this.url + 'restaurant/' + id, params, { headers: headers })
+    return this._http.put(this.url + 'proveedor/' + id, params, { headers: headers })
       .map(res => res.json());
   }
 
-
-
-  getRestaurants(token, usuarioId = null) {
-
+  deleteProveedor(token, id: String) {
     let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
     let options = new RequestOptions({ headers: headers });
 
-    if (usuarioId == null) {
-      return this._http.get(this.url + 'restaurants', options)
-        .map(res => res.json());
-    } else {
-      return this._http.get(this.url + 'restaurants/' + usuarioId, options)
-        .map(res => res.json());
-    }
-  }
-
-  deleteRestaurant(token, id: String) {
-    let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': token });
-    let options = new RequestOptions({ headers: headers });
-
-    return this._http.delete(this.url + 'restaurant/' + id, options).map(res => res.json());
+    return this._http.delete(this.url + 'proveedor/' + id, options).map(res => res.json());
   }
 
 }

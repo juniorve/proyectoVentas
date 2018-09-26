@@ -12,13 +12,7 @@ const appRoutes: Routes = [
     path: '',
     component: SidebarComponent,
     children: [
-      // { path: 'mrestaurant', component: MrestaurantComponent },
-      // { path: 'listrestaurant', component: ListrestaurantComponent },
-      // { path: 'editrestaurant/:id', component: EditrestaurantComponent },
-      // { path: 'restaurantedit', component: RestauranteditComponent }
-     ,
-      { path: '', redirectTo: '/principal', pathMatch: 'full' } 
-    ]
+     ]
   },*/
   { path: 'login', component: LoginComponent },
   { path: 'categorias', component: CategoriasComponent },

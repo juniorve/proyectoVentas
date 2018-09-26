@@ -1,6 +1,6 @@
+import { Proveedor } from './../../../models/proveedor';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { RestaurantService } from '../../../services/restaurant.service';
-import { Restaurant } from '../../../models/restaurant';
+import { ProveedorService } from '../../../services/proveedor.service';
 import { GLOBAL } from '../../../services/global';
 import { UserService } from '../../../services/user.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -18,7 +18,7 @@ declare var $: any;
   selector: 'edit-proveedor',
   templateUrl: './edit-proveedor.component.html',
   styleUrls: ['./edit-proveedor.component.css'],
-  providers: [RestaurantService, UserService]
+  providers: [ProveedorService, UserService]
 
 })
 export class EditProveedorComponent implements OnInit {
@@ -35,53 +35,71 @@ export class EditProveedorComponent implements OnInit {
   public title: String = 'Edición de datos del proveedor';
   public token;
   public url;
-  public restaurant: Restaurant;
+  public proveedor: Proveedor;
   public mensajeError: String;
-  public _idRestaurant: String;
+  // public _idRestaurant: String;
   public imagenTemp: String;
   restaurantId: string;
 
 
-  constructor(private _restaurantService: RestaurantService, private _userService: UserService,
+  constructor(private _proveedorService: ProveedorService, private _userService: UserService,
     private _route: ActivatedRoute,
     private _router: Router) {
     this.token = this._userService.getToken();
     this.usuario = this._userService.getIdentity();
-    this.restaurant = new Restaurant('', '', '', '', '', '', '', '');
+    this.proveedor = new Proveedor('', '', '', '', '', '', '');
     this.url = GLOBAL.url;
   }
 
   ngOnInit() {
-    this.getRestaurantUrl();
-    this.getRestaurant();
+    this.gerProveedorUrl();
+    this.getProveedor();
   }
 
-  getRestaurantUrl() {
+  public proveedorId:String='';
+  gerProveedorUrl() {
     this._route.params.forEach((params: Params) => {
       if (params['id']) {
-        this.restaurantId = params['id'];
+        this.proveedorId = params['id'];
       }
     });
   }
 
-  editRestaurant() {
-    this._restaurantService.updateRestaurant(this.token, this.restaurantId, this.restaurant).subscribe(
+  editProveedor() {
+    this._proveedorService.updateProveedor(this.token, this.proveedorId, this.proveedor).subscribe(
       response => {
-        if (!response.restaurant) {
+        if (!response.proveedor) {
           swal('Lo sientimos', 'Información no moficada', 'warning');
 
         } else {
-          this.makeFileRequest(this.url + 'upload-img-restaurant/' + response.restaurant._id, [],
-            this.filesToUpload).then(
-              (result) => {
-          swal('Restaurante modificado', 'Información del restaurante modificada exitosamente', 'success');
-          this._router.navigate(['/restaurantedit']);
-              },
-              (error) => {
-                console.log(error);
-              }
-            );
+          
 
+            if (!this.filesToUpload) {
+              swal(
+                "Proveedor modificado",
+                "El proveedor fue modificado correctamente",
+                "success"
+              );
+              this._router.navigate(["/mant-proveedor"]);
+            } else {
+              this.makeFileRequest(
+                this.url + "upload-img-proveedor/" + response.proveedor._id,
+                [],
+                this.filesToUpload
+              ).then(
+                result => {
+                  swal(
+                    "´Proveedor modificado",
+                    "El proveedor fue modificado correctamente",
+                    "success"
+                  );
+                  this._router.navigate(["/mant-proveedor"]);
+                },
+                error => {
+                  console.log(error);
+                }
+              );
+            }
         }
       },
       error => {
@@ -90,13 +108,13 @@ export class EditProveedorComponent implements OnInit {
       });
   }
 
-  getRestaurant() {
-    this._restaurantService.getRestaurant(this.token, this.restaurantId).subscribe(
+  getProveedor() {
+    this._proveedorService.getProveedor(this.token, this.proveedorId).subscribe(
       response => {
-        if (!response.restaurant) {
+        if (!response.proveedor) {
         } else {
-          this.restaurant = response.restaurant;
-          console.log(this.restaurant);
+          this.proveedor = response.proveedor;
+          console.log(this.proveedor);
           //    this.imagenTemp=this.restaurant.imagen;
         }
       },

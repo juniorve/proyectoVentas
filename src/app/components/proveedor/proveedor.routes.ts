@@ -5,7 +5,7 @@ import { EditProveedorComponent } from './edit-proveedor/edit-proveedor.componen
 
 
 const proveedorRoutes:Routes = [
-    {path:'edit-proveedor', component: EditProveedorComponent},
+    {path:'edit-proveedor/:id', component: EditProveedorComponent},
     {path:'mant-proveedor', component: MantProveedorComponent},
     {path:'new-proveedor', component: NewProveedorComponent}
 ]

@@ -3,14 +3,22 @@
     color:#5D6D7E  ;
     border-color:#5D6D7E;
     margin-bottom:30px;
+    cursor: pointer;
 }
 
+.nuevo{
+    margin-bottom: 30px;
+    cursor: pointer;
+}
 
 .btn-nuevo:hover{
     background-color: #5D6D7E  ;
     color:white;
     border-color: white;
+}
 
+.fa{
+    cursor: pointer;
 }
 
 .mas{
@@ -39,7 +47,7 @@ table {
 }
 
 .contenedor{
-	background-color: #eee;
+	background-color: white;
 }
 .todo{
 	background-color: white;
@@ -119,22 +127,28 @@ tr {
 
 }
 
+.tabla-prov{
+    width: 100%;
+}
+ 
+
 .table{
     font-size: 14px;
-    color: #747678;}
-
-
+    color: #747678;
+}
 
 .titulo{
     min-height: 100px;
     display: block;
     padding-top: 40px;
     background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-    color: #fff;
     margin: 0 auto;
     text-align: center;
 }
 
+.titulo h3{
+    color: #fff;
+}
 .text-adm{
     font-size: 15px;
     color: #747678;
@@ -167,3 +181,13 @@ tr {
     display: inline-block;
     vertical-align: middle;
 }
+
+.prov{
+    margin-left: 5px;
+}
+.boton{
+    text-align: center;
+    padding: 20px 0px;
+    width: 100%;
+  }
+  

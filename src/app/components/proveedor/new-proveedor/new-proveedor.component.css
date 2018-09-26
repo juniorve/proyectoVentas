@@ -1,12 +1,24 @@
 
 
 .guardar{
+  margin-left: 5px;
   color: white;
-  background: rgb(46,139,87,0.9)
+  background: rgb(70,130,180,0.9);
+  cursor: pointer;
 }
 
 .guardar:hover{
-  background: rgb(46,139,87,1)
+  background: rgb(70,130,180,1);
+}
+
+.volver{
+  color: white;
+  background: rgb(112,128,144,0.9);
+  cursor: pointer;
+}
+
+.volver:hover{
+  background: rgb(112,128,144,1);
 }
 
 

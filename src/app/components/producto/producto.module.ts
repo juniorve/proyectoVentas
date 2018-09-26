@@ -1,13 +1,13 @@
 import { MaterialModule } from './../../shared/modules/material.module';
-import { ListProductoComponent } from './list-producto/list-producto.component';
+// import { ListProductoComponent } from './list-producto/list-producto.component';
 import { NgModule } from "@angular/core";
 
 @NgModule({
     declarations:[
-        ListProductoComponent
+        // ListProductoComponent   
     ],
     exports:[
-        ListProductoComponent
+        // ListProductoComponent   
     ],
     imports:[
         MaterialModule

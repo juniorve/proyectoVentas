@@ -7,44 +7,54 @@
 
   <div class="container">
     <div class="row">
-      <span class="text-adm col-xs-12">Use la tabla a continuación para administrar sus proveedores.</span>
+      <span class="text-adm col-xs-12 col-md-12">Use la tabla a continuación para administrar sus proveedores.</span>
       <br><br>
       <!--   <div class="table-responsive"> -->
-      <div class="col-xs-12 ">
-        <table class="table tabla">
+      <div class="tabla-prov">
+        <table class="table table-responsive tabla">
           <thead>
             <tr>
               <th>N°</th>
               <th>Nombre</th>
+              <th>Tipo de ropa</th>
+              <th>Celular</th>
               <th>Descripción</th>
-              <th>Capacidad</th>
-              <th>Horario</th>
+              <th>Email</th>
+              <th>Direccion</th>
               <th>editar/eliminar</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let restaurant of restaurants; let i=index">
+            <tr *ngFor="let proveedor of proveedores; let i=index">
               <td scope="row">{{i+1}}</td>
-              <td>{{restaurant.nombre}}</td>
-              <td>{{restaurant.tipo_cocina}}</td>
-              <td>{{restaurant.capacidad}}</td>
-              <td>{{restaurant.horario}}</td>
+              <td>{{proveedor.nombre}}</td>
+              <td>{{proveedor.tipo}}</td>
+              <td>{{proveedor.celular}}</td>
+              <td>{{proveedor.descripcion}}</td>
+              <td>{{proveedor.email}}</td>
+              <td>{{proveedor.direccion}}</td>
               <td>
                 <div class="btn-group">
-                  <button class="btn btn-default" (click)="editRestaurant(restaurant._id)"><span class="fa fa-pencil"></span></button>
-                  <button class="btn btn-danger" (click)="deleteRestaurant(restaurant._id)"><span class="fa fa-trash"></span></button>
+                  <button class="btn btn-default" (click)="editProveedor(proveedor._id)"><span class="fa fa-pencil"></span></button>
+                  <button class="btn btn-danger" (click)="deleteProveedor(proveedor._id)"><span class="fa fa-trash"></span></button>
                 </div>
               </td>
             </tr>
         </table>
       </div>
 
-      <button class="offset-lg-5 offset-xs-2 offset-sm-3 offset-md-4 btn btn-nuevo" [routerLink]="['/mrestaurant']"><i
-          class="fa fa-plus mas" aria-hidden="true"></i>
-        <strong>NUEVO PROVEEDOR</strong></button>
-
+      
+      <div class="boton">
+          <button class="btn btn-info nuevo" [routerLink]="['/principal']"><i
+            class="fa fa-arrow-left mas" aria-hidden="true"></i>
+          <strong>Regresar inicio</strong></button>
+        <button class="btn prov btn-nuevo" [routerLink]="['/new-proveedor']"><i
+            class="fa fa-plus mas" aria-hidden="true"></i>
+          <strong>Nuevo proveedor</strong></button>
+        </div>
+        
     </div>
 
-    <section *ngIf="restaurants.length<3"></section>
+    <section *ngIf="proveedores.length<3"></section>
   </div>
 </div>

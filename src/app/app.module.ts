@@ -1,3 +1,4 @@
+import { CategoriasComponent } from './components/categorias/categorias.component';
 import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { routing, appRoutingProviders } from './app.routing';
@@ -28,7 +29,8 @@ import { RestauranteditComponent } from './components/restaurantedit/restaurant_
     ListrestaurantComponent,
     EditrestaurantComponent,
     SidebarComponent,
-    RegisterComponent
+    RegisterComponent,
+    CategoriasComponent
   ],
   imports: [
     MaterialModule, 

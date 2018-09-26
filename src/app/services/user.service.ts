@@ -55,6 +55,7 @@ export class UserService {
 
 
   loginUser(user_to_login, gethash = null) {
+    console.log(user_to_login);
     if (gethash != null) {
       user_to_login.gethash = gethash;
     }

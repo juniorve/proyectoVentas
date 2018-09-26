@@ -59,7 +59,7 @@ jQuery(document).ready(function($)
 	2. Set Header
 
 	*/
-
+ 
 	function setHeader()
 	{
 		if(window.innerWidth < 992)
@@ -77,7 +77,7 @@ jQuery(document).ready(function($)
 		{
 			if($(window).scrollTop() > 100)
 			{
-				header.css({'top':"-50px"});
+				header.css({'top':"0px"});
 			}
 			else
 			{
@@ -89,7 +89,7 @@ jQuery(document).ready(function($)
 			closeMenu();
 		}
 	}
-
+ 
 	/* 
 
 	3. Init Menu

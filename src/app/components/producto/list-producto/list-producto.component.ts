@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from '../../services/restaurant.service';
-import { Restaurant } from '../../models/restaurant';
-import { GLOBAL } from '../../services/global';
-import { UserService } from '../../services/user.service';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { Restaurant } from '../../../models/restaurant';
+import { GLOBAL } from '../../../services/global';
+import { UserService } from '../../../services/user.service';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 

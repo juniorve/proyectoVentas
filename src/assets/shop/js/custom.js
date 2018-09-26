@@ -90,7 +90,7 @@ jQuery(document).ready(function($)
 			closeMenu();
 		}
 	}
-
+ 
 	/* 
 
 	3. Init Menu

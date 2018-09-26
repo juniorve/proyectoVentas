@@ -1,5 +1,4 @@
 import { CategoriasComponent } from './components/categorias/categorias.component';
-import { PresentacionComponent } from './components/presentacion/presentacion.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { routing, appRoutingProviders } from './app.routing';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,23 +10,16 @@ import { LoginComponent } from './components/login/login.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MrestaurantComponent } from './components/mrestaurant/mrestaurant.component';
-import { ListrestaurantComponent } from './components/listrestaurant/listrestaurant.component';
-import { EditrestaurantComponent } from './components/editrestaurant/editrestaurant.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RegisterComponent } from './components/register/register.component';
-import { RestauranteditComponent } from './components/restaurantedit/restaurant_edit.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PresentacionComponent,
+    PrincipalComponent,
     LoginComponent,
-    RestauranteditComponent,
-    MrestaurantComponent,
-    ListrestaurantComponent,
-    EditrestaurantComponent,
     SidebarComponent,
     RegisterComponent,
     CategoriasComponent

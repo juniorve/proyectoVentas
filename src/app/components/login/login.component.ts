@@ -30,12 +30,14 @@ export class LoginComponent implements OnInit{
   }
 
   loginUser(){
+    console.log(this.user);
 
    // conseguir los datos del usuario identificado
     this._userService.loginUser(this.user).subscribe(
                response=>{
                   let identity =response.user;
                   this.identity = identity;
+                  console.log(response.user);
 
                   if(!this.identity._id){
                     alert("El usuario no esta correctamente identificado");
@@ -56,7 +58,7 @@ export class LoginComponent implements OnInit{
                               // crear elemento en el localstorage para tener al token disponible
                               localStorage.setItem('token', token);
 
-                                       this._router.navigate(['/']);
+                                       this._router.navigate(['/principal']);
                                        this.user = new User('','','','','','','','','','','','');
                                       }
                               },

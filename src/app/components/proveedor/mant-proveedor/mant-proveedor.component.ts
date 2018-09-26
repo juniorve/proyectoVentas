@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { GLOBAL } from '../../services/global';
-import { UserService } from '../../services/user.service';
+import { GLOBAL } from '../../../services/global';
+import { UserService } from '../../../services/user.service';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { RestaurantService } from '../../services/restaurant.service';
-import { Restaurant } from '../../models/restaurant';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { Restaurant } from '../../../models/restaurant';
 
 import * as _swal from 'sweetalert';
 import { SweetAlert } from 'sweetalert/typings/core';
@@ -16,13 +16,13 @@ declare var $: any;
 
 
 @Component({
-  selector: 'app-restaurant_edit',
-  templateUrl: './restaurant_edit.component.html',
-  styleUrls: ['./restaurant_edit.component.css'],
+  selector: 'mant-proveedor',
+  templateUrl: './mant-proveedor.component.html',
+  styleUrls: ['./mant-proveedor.component.css'],
   providers: [RestaurantService, UserService]
 
 })
-export class RestauranteditComponent implements OnInit {
+export class MantProveedorComponent implements OnInit {
   public identity: any;
   public token;
   public url;

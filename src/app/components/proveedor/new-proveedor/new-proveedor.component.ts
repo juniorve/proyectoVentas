@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { RestaurantService } from '../../services/restaurant.service';
-import { Restaurant } from '../../models/restaurant';
-import { GLOBAL } from '../../services/global';
-import { UserService } from '../../services/user.service';
+import { RestaurantService } from '../../../services/restaurant.service';
+import { Restaurant } from '../../../models/restaurant';
+import { GLOBAL } from '../../../services/global';
+import { UserService } from '../../../services/user.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -15,13 +15,13 @@ declare var $: any;
 
 
 @Component({
-  selector: 'app-mrestaurant',
-  templateUrl: './mrestaurant.component.html',
-  styleUrls: ['./mrestaurant.component.css'],
+  selector: 'new-proveedor',
+  templateUrl: './new-proveedor.component.html',
+  styleUrls: ['./new-proveedor.component.css'],
   providers: [RestaurantService, UserService]
 
 })
-export class MrestaurantComponent implements OnInit {
+export class NewProveedorComponent implements OnInit {
   tipoControl = new FormControl([Validators.required]);
   tipos = [
     { name: 'Comida china' },

@@ -7,9 +7,9 @@ import { UserService } from '../../../services/user.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
-  selector: 'app-listrestaurant',
-  templateUrl: './listrestaurant.component.html',
-  styleUrls: ['./listrestaurant.component.css'],
+  selector: 'list-producto',
+  templateUrl: './list-producto.component.html',
+  styleUrls: ['./list-producto.component.css'],
   providers: [RestaurantService, UserService]
 
 })

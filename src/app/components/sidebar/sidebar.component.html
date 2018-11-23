@@ -91,6 +91,15 @@
                         <span>Administración</span>
                       </a>
                     </li>
+                    <li class="header-menu">
+                        <span>Ingresos</span>
+                      </li>
+                      <li class="res_add" *ngIf="identity.role=='ROLE_ADMIN'">
+                        <a [routerLink]="['/ganancias']">
+                          <i class="fa fa-list"></i>
+                          <span>Ver Ganancias</span>
+                        </a>
+                      </li>
           <li class="header-menu">
             <span>Cuenta</span>
           </li>

@@ -14,6 +14,7 @@ import { ListProveedorComponent } from './components/proveedor/list-proveedor/li
 import { ViewProveedorComponent } from './components/proveedor/view-proveedor/view-proveedor.component';
 import { AdmProductoComponent } from './components/producto/adm-producto/adm-producto.component';
 import { NewProductoComponent } from './components/producto/new-producto/new-producto.component';
+import { GanananciasComponent } from './components/ingresos/ganancias/ganancias.component';
 
 const appRoutes: Routes = [
     {
@@ -25,6 +26,8 @@ const appRoutes: Routes = [
       {path:'new-proveedor', component: NewProveedorComponent},
       {path:'list-proveedor', component: ListProveedorComponent},
       {path:'view-proveedor/:id', component: ViewProveedorComponent},
+      //ganancias
+      {path:'ganancias', component: GanananciasComponent},
       //productos
       {path:'adm-producto', component: AdmProductoComponent},
       {path:'new-producto', component: NewProductoComponent},
